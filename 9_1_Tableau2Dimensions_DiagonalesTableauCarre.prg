@@ -41,3 +41,13 @@ debut prgm
         iColonne suivant
     iLigne suivant
 fin prgm
+
+------------------------------
+const TAILLE : N <- 4
+VAR   tab:N[TAILLE][TAILLE]
+var compteurDeux : N <- taille
+pour cpt allant de 1 à 4
+    tab[cpt,cpt]<- 1
+    tab[cpt,taille]<- 2
+    compteurDeux --
+cpt suivant
