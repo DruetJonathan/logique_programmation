@@ -29,3 +29,23 @@ Var n <- 1;
     Fin de tant que
 
 Fin de programme
+------------------------------
+soluce prof
+
+pour nb allant de 2 a 100
+    somme div i <- 1
+    racine <- racine(nb)
+    pour diviseur allant de 2 à racine - 1
+        si nb mod diviseur = 0
+            alors
+                somme div i <- somme div i + nb / div
+        Finsi
+    diviseur suivant
+    si racine mod 1 = 0
+        alors 
+            somme div i <- somme div i + racine
+    si somme div i = nb
+        alors
+            afficher nb
+    fin si
+nb suivant

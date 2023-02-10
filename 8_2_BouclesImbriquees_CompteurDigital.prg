@@ -30,3 +30,9 @@ pour a allant de 0 a 9
         c suivant
     b suivant
 a suivant
+--------------------
+pour cpt allant de 0 a 999
+    centaine <- cpt div 100
+    dizaine <- (cpt mod 100)div 10
+    unite <- cpt mod 10
+cpt suivant
