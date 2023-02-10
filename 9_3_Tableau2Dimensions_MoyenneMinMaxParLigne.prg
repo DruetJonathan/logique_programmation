@@ -35,3 +35,4 @@ debut prgm
     cpt suivant
 
 fin prgm
+.
