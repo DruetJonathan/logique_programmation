@@ -51,3 +51,5 @@ pour cpt allant de 1 à 4
     tab[cpt,taille]<- 2
     compteurDeux --
 cpt suivant
+=======
+
