@@ -117,7 +117,7 @@ fonction ajouterDebut(in newValeur: N, in l:list):list
     resultat <- creer list
     result.valeur = newValeur
     result.suivant = l
-    retourne l
+    retourne result
 fin ajouterDebut
 -----
 fonction ajouterFin(in newValeur: N, in l:list):list
