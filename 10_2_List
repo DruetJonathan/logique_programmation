@@ -57,7 +57,15 @@ remplacer(valeur:N, l:list,Position:N):list
     temp.valeur = valeur
     retourne l
 -------------------
-supprimer(l:list,Position:N):list       
+supprimer(l:list,position:N):list      
+    temp <- l
+    cpt <- 0
+    tant que cpt + 1< position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    temp.suivant <- temp suivant
+    retourne cpt
 -------------------
 lire(l:list,position:N):N
     temp <- l
@@ -68,7 +76,7 @@ lire(l:list,position:N):N
     fintantque
     retourne temp
 -------------------
-taille(l:list):N
+fonction taille(l:list):N
     temp <- l
     cpt <- 0
     tant que temp <> null
@@ -76,3 +84,57 @@ taille(l:list):N
         cpt <- cpt + 1
     fintantque
     retourne cpt
+fin taille
+
+-----------------------------------
+Correction
+-----------------------------------
+----
+Structure List
+    var valeur: nouvellevar suivant : List
+fin List
+----
+fonction sousList(l:List, position:N): List
+    var result: List <- l
+    var cpt : N <- 0
+    pour cpt allant de 1 à position
+        result <- result.suivant
+        cpt suivant
+    retourner result
+fin sousList
+-----
+fonciton lire(l:list,position:N):N
+    retourne sousList(l,position).valeur
+fin lire
+-----
+procedure remplacer(newValeur:N, l:list,Position:N)
+    retourne sousList(l,position).valeur <- newValeur
+fin remplacer
+-----
+fonction ajouterDebut(in newValeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    var result: List
+    resultat <- creer list
+    result.valeur = newValeur
+    result.suivant = l
+    retourne l
+fin ajouterDebut
+-----
+fonction ajouterFin(in newValeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    var result: List <- l
+    si l = null
+        alors 
+            result <- ajouterDebut(l,newList)
+        sinon
+            tantque l.suivant != null
+                l <- l.suivant
+            fintantque
+            l.suivant <- CREER List
+            l.suivant.valeur <- newValeur
+    finsi
+    retourne result
+fin ajouterFin
+-----
+
+-----
