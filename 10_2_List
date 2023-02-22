@@ -1,0 +1,78 @@
+-------------------
+ajouterValeur(in valeur: N, in l:list):list
+    // creation nouvelle valeur
+    nouvelleValeur <- creer list
+    nouvelleValeur.valeur = valeur
+    --------------
+    // bouclage pour arriver au dernier elements
+    temp <- l
+    cpt <- 0
+    tant que temp <> null
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    // ajout de temp a la derniere cellule
+    temp.suivant <- nouvelleValeur
+    retourne l
+-------------------
+ajouterDebut(in valeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    temp <- creer list
+    temp.valeur = valeur
+    temp.suivant = l
+    retourne l
+-------------------
+inserer(valeur:N, l:list,position:N):list
+    si position == 0
+        alors
+            ajouterDebut(valeur,l)
+    sinon
+        // creation de ma nouvelle cellule
+        temp <- creer list
+        temp.valeur = valeur
+        ------
+        // je parcours la liste existante
+        parcourList <- l
+        cpt <- 0
+        tant que cpt < position - 1
+            parcourList <- parcourList suivant
+            cpt <- cpt + 1
+        fintantque
+        -------
+        // on ajoute la réference de la cellule suivante à la nouvelle cellule
+        temp.suivant = parcourList.suivant
+        // on ajoute la reference de la nouvelle cellule à la précédente
+        parcourList.suivant <- temp
+    finsi
+    // on retourne la list
+    retourne l
+-------------------
+remplacer(valeur:N, l:list,Position:N):list
+    temp <- l
+    cpt <- 0
+    tant que cpt < position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    temp.valeur = valeur
+    retourne l
+-------------------
+supprimer(l:list,Position:N):list       
+-------------------
+lire(l:list,position:N):N
+    temp <- l
+    cpt <- 0
+    tant que cpt <> position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    retourne temp
+-------------------
+taille(l:list):N
+    temp <- l
+    cpt <- 0
+    tant que temp <> null
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    retourne cpt
