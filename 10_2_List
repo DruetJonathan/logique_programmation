@@ -64,8 +64,8 @@ supprimer(l:list,position:N):list
         temp <- temp suivant
         cpt <- cpt + 1
     fintantque
-    temp.suivant <- temp suivant
-    retourne cpt
+    temp.suivant <- temp.suivant.suivant
+    retourne l
 -------------------
 lire(l:list,position:N):N
     temp <- l
